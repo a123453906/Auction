@@ -1,67 +1,31 @@
-# Ethereum Solidity + Vue.js Tutorial Simple Auction Dapp within 10 minutes
+# Auction
 
-A simple Auction dapp where you can create an auction, place bids, and finalize an auction.
+## Modified
+* 以[https://github.com/openberry-ac/Auction/](https://github.com/openberry-ac/Auction/) 基底修改
+* 新增部分
+    * 前端部分
+        * 可根據鍊上變化即時更新拍賣顯示狀態
+        * Refresh頁面也能獲取所有拍賣狀態而不會消失
+        * 完善介面操作及狀態顯示邏輯
+    * 合約部分
+        * 取消拍賣功能
+        * 拍賣結束時間
 
-This repository is used in this Medium article:
+## Requirement
+* ganache-cli
+* npm install truffle -g
+* npm install
+* MetaMask browser extension
+* 複製ganache-cli中之private key新增至MetaMask中
 
-https://medium.com/openberry/ethereum-solidity-vue-js-tutorial-simple-auction-dapp-within-10-minutes-76ba48156b2
 
----
+## Deploy
+* 更改truffle-config.js 中networks之development成要部署之node url (ganache預設為 http://localhost:8545)
+* truffle migrate --reset
+* 取代 contracts/auctionBoxInstance.js 中之address為上一步中Deploying 'AuctionBox'中之contract address
+* 取代 contracts/auctionBoxInstance.js 中之abi為 build/contracts/AuctionBox.json中之abi
+* 取代 contracts/auctionInstance.js 中之abi為 build/contracts/Auction.json中之abi
 
-
-## Prerequisites
-
-* **Node** - v10.x.x (preferrably v10.15.0 for long term support)
-* **npm** - v6.x.x (preferrably v6.6.0)
-
-## Running It Locally
-
-Clone this repo via to your local machine and install the dependencies by doing the following:
-
-```bash
-git clone https://github.com/openberry-ac/Auction.git
-cd Auction
-npm install
-```
-
-Serve the application with hot reload in a development environment via:
-
-```bash
-npm run dev
-```
-
-![](https://i.imgur.com/Tutw0m7.gif)
-
-### Boilerplate
-
-If it is only the boilerplate that you want to clone, do it via:
-
-```
-git clone -b boilerplate --single-branch https://github.com/openberry-ac/Auction.git
-```
-
-And then do the same following commands as shown above for starting the application, you should be all set by then.
-
-## Built With
-
-* [Solidity](https://solidity.readthedocs.io/en/v0.5.2/) - Ethereum's smart contract programming language
-* [Vue.js](https://vuejs.org/) - The Javascript framework used
-* [web3.js](https://github.com/ethereum/web3.js/) - Javascript library used to interact with the Ethereum blockchain
-
-## OpenBerry
-
-Anyone can become a blockchain engineer!
-
-OpenBerry is a tutorial marketplace, designed to enable anyone to learn blockchain programming.
-
-**Website:**
-
-https://openberry.ac/
-
-**Medium:**
-
-https://medium.com/openberry
-
-**Twitter:**
-
-https://twitter.com/openberry_ac
+## Test
+* npm run dev
+* [localhost:8080](http://localhost:8080)

@@ -1,61 +1,93 @@
 import web3 from './web3';
 
-const address = '0x2c65a8e0e59b72b0f4207d28daa986c719753ae9'; // THE CONTRACT ADDRESS
-const abi = [
+const address = '0xf0db177F2CA3bD44Ab0D9B1aa0c94aB5fdc09a9A'; // THE CONTRACT ADDRESS
+let abi = [
   {
-    constant: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        name: '_title',
-        type: 'string'
+        "indexed": false,
+        "internalType": "address",
+        "name": "auctionAddress",
+        "type": "address"
       },
       {
-        name: '_startPrice',
-        type: 'uint256'
+        "indexed": false,
+        "internalType": "string",
+        "name": "tilte",
+        "type": "string"
       },
       {
-        name: '_description',
-        type: 'string'
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "time",
+        "type": "uint256"
       }
     ],
-    name: 'createAuction',
-    outputs: [],
-    payable: false,
-    stateMutability: 'nonpayable',
-    type: 'function'
+    "name": "CreateAuction",
+    "type": "event"
   },
   {
-    constant: true,
-    inputs: [
+    "inputs": [
       {
-        name: '',
-        type: 'uint256'
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
-    name: 'auctions',
-    outputs: [
+    "name": "auctions",
+    "outputs": [
       {
-        name: '',
-        type: 'address'
+        "internalType": "contract Auction",
+        "name": "",
+        "type": "address"
       }
     ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
   },
   {
-    constant: true,
-    inputs: [],
-    name: 'returnAllAuctions',
-    outputs: [
+    "inputs": [
       {
-        name: '',
-        type: 'address[]'
+        "internalType": "string",
+        "name": "_title",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_startPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_endTime",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_description",
+        "type": "string"
       }
     ],
-    payable: false,
-    stateMutability: 'view',
-    type: 'function'
+    "name": "createAuction",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "returnAllAuctions",
+    "outputs": [
+      {
+        "internalType": "contract Auction[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
   }
 ]; // THE ABI
 
