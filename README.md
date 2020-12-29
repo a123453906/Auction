@@ -14,7 +14,7 @@
 ## Requirement
 * ganache-cli
 * npm install truffle -g
-* npm install
+* npm install --dev
 * MetaMask browser extension
 * 複製ganache-cli中之private key新增至MetaMask中
 
