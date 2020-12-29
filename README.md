@@ -12,6 +12,7 @@
         * 拍賣結束時間
 
 ## Requirement
+* node v10.22.0
 * ganache-cli
 * npm install truffle -g
 * npm install --dev
